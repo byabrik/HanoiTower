@@ -34,7 +34,7 @@ namespace HanoiTower
             }
         }
 
-        public void MoveDisks(int n, int from, int via, int to)
+        public void MoveDisks(int n, int from, int to, int via)
         {
             if (n == 1)
             {
@@ -45,9 +45,9 @@ namespace HanoiTower
             }
             else
             {
-                MoveDisks(n - 1, from, to, via);
+                MoveDisks(n - 1, from, via, to);
                 MoveDisks(1, from, to, via);
-                MoveDisks(n - 1, via, from, to);
+                MoveDisks(n - 1, via, to, from);
             }
         }
     }
